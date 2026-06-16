@@ -26,6 +26,7 @@ import java.util.LinkedList;
 public class AdjacencyList {
 	private LinkedList<Integer> neighbors;
 
+
 	// COMMENT: Constructor - initializes empty list
 	public AdjacencyList() {
 		neighbors = new LinkedList<>();

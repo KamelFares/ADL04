@@ -7,7 +7,6 @@ import java.util.Map;
  * Authors: Kamel Fares
  * Date: 2026-06-15
  * Purpose: Manages a collection of AdjacencyList objects, one for each vertex in the graph.
- *          Uses a HashMap to efficiently map vertex IDs to their adjacency lists.
  * 
  * Public Methods:
  *   - getList(int vertexId): Returns the AdjacencyList for a specific vertex.
@@ -20,7 +19,7 @@ public class AdjacencyLists {
 	private Map<Integer, AdjacencyList> lists;
 
 	public AdjacencyLists() {
-		this.lists = new HashMap<>();
+		lists = new HashMap<>();
 	}
 
 	public AdjacencyList getList(int vertexId) {
