@@ -15,24 +15,23 @@ public class Application {
 		graph = new Graph();
 		visualNodes = new HashMap<>();
 		
-		// Create nodes with positions
-		addVisualVertex(1, new Point(100, 100));
-		addVisualVertex(2, new Point(300, 100));
-		addVisualVertex(3, new Point(500, 100));
-		addVisualVertex(4, new Point(200, 300));
-		addVisualVertex(5, new Point(400, 300));
+		// Create nodes with positions forming a K shape
+		addVisualVertex(1, new Point(100, 80));   // Top-left
+		addVisualVertex(2, new Point(100, 200));  // Middle-left (junction)
+		addVisualVertex(3, new Point(100, 320));  // Bottom-left
+		addVisualVertex(4, new Point(280, 100));  // Top-right diagonal
+		addVisualVertex(5, new Point(280, 300));  // Bottom-right diagonal
 		
-		// Add edges with weights
-		graph.addEdge(1, 2, 5);
-		graph.addEdge(2, 3, 3);
-		graph.addEdge(1, 4, 7);
-		graph.addEdge(2, 4, 2);
-		graph.addEdge(3, 5, 4);
-		graph.addEdge(4, 5, 6);
+		// Add edges forming K shape
+		graph.addEdge(1, 2, 5);  // Vertical down
+		graph.addEdge(2, 3, 3);  // Vertical down
+		graph.addEdge(2, 4, 7);  // Diagonal up-right
+		graph.addEdge(2, 5, 2);  // Diagonal down-right
+		graph.addEdge(1, 4, 4);  // Top diagonal connection
+		graph.addEdge(3, 5, 6);  // Bottom diagonal connection
 	}
 	
 	private void addVisualVertex(int id, Point position) {
-		graph.addVertex(id);
 		Node node = new Node(id, 0);
 		VisualNode vNode = new VisualNode(node, position);
 		visualNodes.put(id, vNode);

@@ -19,11 +19,7 @@ public class Graph {
 		edgeWeights = new HashMap<>();
 		edgeCount = 0;
 	}
-
-	public void addVertex(int vertexId) {
-		adjLists.addVertex(vertexId);
-	}
-
+ // should we add a method to remove edges or vertices? nah i think the edge do it by itself when we remove the vertex, and we dont need to remove edges for this task
 	public void addEdge(int u, int v, int weight) {
 		if (!adjLists.vertexExists(u)) adjLists.addVertex(u);
 		if (!adjLists.vertexExists(v)) adjLists.addVertex(v);
