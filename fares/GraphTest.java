@@ -153,31 +153,24 @@ public class GraphTest {
 		// Create a sample graph
 		Graph graph = new Graph();
 		
-		// Create nodes
-		Node n1 = new Node(1, 10);
-		Node n2 = new Node(2, 20);
-		Node n3 = new Node(3, 30);
-		Node n4 = new Node(4, 40);
-		Node n5 = new Node(5, 50);
+		// Add vertices
+		graph.addVertex(1);
+		graph.addVertex(2);
+		graph.addVertex(3);
+		graph.addVertex(4);
+		graph.addVertex(5);
 		
-		// Add nodes to graph
-		graph.add(n1);
-		graph.add(n2);
-		graph.add(n3);
-		graph.add(n4);
-		graph.add(n5);
-		
-		System.out.println("Added 5 nodes to graph");
+		System.out.println("Added 5 vertices to graph");
 		System.out.println("Number of vertices: " + graph.numOfVertices());
 		assert graph.numOfVertices() == 5 : "Should have 5 vertices";
 		
-		// Add edges
-		System.out.println("\nAdding edges (with weights):");
+		// Add weighted edges
+		System.out.println("\nAdding weighted edges:");
 		graph.addEdge(1, 2, 5);
 		graph.addEdge(2, 3, 10);
 		graph.addEdge(3, 4, 15);
 		graph.addEdge(4, 5, 20);
-		graph.addEdge(2, 5, 25);  // Alternative path
+		graph.addEdge(2, 5, 25);
 		
 		System.out.println("Edge 1→2 added with weight 5");
 		System.out.println("Edge 2→3 added with weight 10");

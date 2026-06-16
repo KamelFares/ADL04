@@ -1,8 +1,7 @@
 package fares;
 
 /**
- * Authors: Kamel Fares
- * Date: 2026-06-15
+ * Represents a graph vertex with an ID and value.
  */
 public class Node {
 	private int id;
