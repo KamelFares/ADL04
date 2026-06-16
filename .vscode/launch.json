@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Run SimpleTest",
+            "request": "launch",
+            "mainClass": "fares.SimpleTest",
+            "projectName": "Lab04"
+        },
+        {
+            "type": "java",
+            "name": "Run GraphTest",
+            "request": "launch",
+            "mainClass": "fares.GraphTest",
+            "projectName": "Lab04"
+        }
+    ]
+}

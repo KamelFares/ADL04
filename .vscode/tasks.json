@@ -1,0 +1,36 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile Fares Package",
+            "type": "shell",
+            "command": "javac",
+            "args": [
+                "-d",
+                ".",
+                "fares/Node.java",
+                "fares/AdjacencyList.java",
+                "fares/AdjacencyLists.java",
+                "fares/Graph.java",
+                "fares/SimpleTest.java"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$javac"]
+        },
+        {
+            "label": "Run SimpleTest",
+            "type": "shell",
+            "command": "java",
+            "args": [
+                "-cp",
+                ".",
+                "fares.SimpleTest"
+            ],
+            "dependsOn": ["Compile Fares Package"],
+            "problemMatcher": []
+        }
+    ]
+}
