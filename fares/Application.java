@@ -1,5 +1,6 @@
 package fares;
 
+import java.awt.Color;
 import java.awt.Point;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -32,9 +33,33 @@ public class Application {
 	
 	private void addVisualVertex(int id, Point position) {
 		graph.addVertex(id);
-		Node node = new Node(id, 0);  // value can be 0 by default
+		Node node = new Node(id, 0);
 		VisualNode vNode = new VisualNode(node, position);
 		visualNodes.put(id, vNode);
+	}
+	
+	/**
+	 * Highlight a path by coloring vertices RED.
+	 * Call this method to visualize the path found by somePath().
+	 */
+	public void showPath() {
+		// Reset all nodes to default color
+		for (VisualNode vNode : visualNodes.values()) {
+			vNode.resetColor();
+		}
+		
+		// Find a path of length 4 starting from vertex 1
+		AdjacencyList path = graph.somePath(1, 4);
+		
+		// Color all vertices in the path RED
+		Iterator<Integer> pathIter = path.getNeighbors();
+		while (pathIter.hasNext()) {
+			int vertexId = pathIter.next();
+			VisualNode vNode = visualNodes.get(vertexId);
+			if (vNode != null) {
+				vNode.setColor(Color.RED);
+			}
+		}
 	}
 	
 	public void draw() {

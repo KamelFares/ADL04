@@ -1,21 +1,13 @@
 package fares;
 
-import javax.swing.JButton;
-
-/**
- * Provides a panel which can be used for drawing.
- * 
- * @author Björn Gottfried
- * @version 1.0
- */
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public class Canvas extends JFrame implements ActionListener { // ActionListener for Lab3
@@ -40,7 +32,7 @@ public class Canvas extends JFrame implements ActionListener { // ActionListener
 		myApp = new Application();
 		add(canvasPanel = new CanvasPanel(), BorderLayout.CENTER);
 		
-		button = new JButton();
+		button = new JButton("Show Path");
 		button.addActionListener(this);
 		add(button, BorderLayout.WEST);
 		
@@ -53,7 +45,7 @@ public class Canvas extends JFrame implements ActionListener { // ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == button) {
-			//myApp.showPath();
+			myApp.showPath();  // Show the path when button is clicked
 			canvasPanel.repaint();
 		}
 	}
